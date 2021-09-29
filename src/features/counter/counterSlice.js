@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
 const initialState = {
-  value: 0,
+  value: 3,
   status: 'idle',
 };
 
@@ -30,9 +30,11 @@ export const counterSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
+      console.log("inc")
       state.value += 1;
     },
     decrement: (state) => {
+      console.log("dec")
       state.value -= 1;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
